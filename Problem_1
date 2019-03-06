@@ -1,0 +1,26 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main() 
+{
+	int k;
+	string word;
+	while(cin>>k>>word)
+	{
+		int count[122]={0};
+		bool appear[122]={false};
+		for(int i=0;i<word.length();i++)
+		{
+			count[word[i]]++;
+			if(count[word[i]]>=k)
+				appear[word[i]]=true;
+		}
+		for(int i=0;i<word.length();i++)
+		{
+			if(appear[word[i]])
+				cout<<word[i];
+		}
+		cout<<endl;
+	}
+}
